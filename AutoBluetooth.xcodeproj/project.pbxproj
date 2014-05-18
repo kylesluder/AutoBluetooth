@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27BAC8F3192969CB00BF04C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BAC8F2192969CB00BF04C4 /* Cocoa.framework */; };
+		27BAC8FD192969CB00BF04C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC8FB192969CB00BF04C4 /* InfoPlist.strings */; };
+		27BAC8FF192969CB00BF04C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC8FE192969CB00BF04C4 /* main.m */; };
+		27BAC903192969CB00BF04C4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC901192969CB00BF04C4 /* Credits.rtf */; };
+		27BAC906192969CB00BF04C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC905192969CB00BF04C4 /* AppDelegate.m */; };
+		27BAC909192969CB00BF04C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC907192969CB00BF04C4 /* MainMenu.xib */; };
+		27BAC90B192969CB00BF04C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC90A192969CB00BF04C4 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27BAC8EF192969CB00BF04C4 /* AutoBluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoBluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BAC8F2192969CB00BF04C4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		27BAC8F5192969CB00BF04C4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		27BAC8F6192969CB00BF04C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		27BAC8F7192969CB00BF04C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		27BAC8FA192969CB00BF04C4 /* AutoBluetooth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoBluetooth-Info.plist"; sourceTree = "<group>"; };
+		27BAC8FC192969CB00BF04C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		27BAC8FE192969CB00BF04C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27BAC900192969CB00BF04C4 /* AutoBluetooth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoBluetooth-Prefix.pch"; sourceTree = "<group>"; };
+		27BAC902192969CB00BF04C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		27BAC904192969CB00BF04C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27BAC905192969CB00BF04C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27BAC908192969CB00BF04C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		27BAC90A192969CB00BF04C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27BAC911192969CB00BF04C4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27BAC8EC192969CB00BF04C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BAC8F3192969CB00BF04C4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27BAC8E6192969CB00BF04C4 = {
+			isa = PBXGroup;
+			children = (
+				27BAC8F8192969CB00BF04C4 /* AutoBluetooth */,
+				27BAC8F1192969CB00BF04C4 /* Frameworks */,
+				27BAC8F0192969CB00BF04C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27BAC8F0192969CB00BF04C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC8EF192969CB00BF04C4 /* AutoBluetooth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27BAC8F1192969CB00BF04C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC8F2192969CB00BF04C4 /* Cocoa.framework */,
+				27BAC911192969CB00BF04C4 /* XCTest.framework */,
+				27BAC8F4192969CB00BF04C4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27BAC8F4192969CB00BF04C4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC8F5192969CB00BF04C4 /* AppKit.framework */,
+				27BAC8F6192969CB00BF04C4 /* CoreData.framework */,
+				27BAC8F7192969CB00BF04C4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		27BAC8F8192969CB00BF04C4 /* AutoBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC904192969CB00BF04C4 /* AppDelegate.h */,
+				27BAC905192969CB00BF04C4 /* AppDelegate.m */,
+				27BAC907192969CB00BF04C4 /* MainMenu.xib */,
+				27BAC90A192969CB00BF04C4 /* Images.xcassets */,
+				27BAC8F9192969CB00BF04C4 /* Supporting Files */,
+			);
+			path = AutoBluetooth;
+			sourceTree = "<group>";
+		};
+		27BAC8F9192969CB00BF04C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC8FA192969CB00BF04C4 /* AutoBluetooth-Info.plist */,
+				27BAC8FB192969CB00BF04C4 /* InfoPlist.strings */,
+				27BAC8FE192969CB00BF04C4 /* main.m */,
+				27BAC900192969CB00BF04C4 /* AutoBluetooth-Prefix.pch */,
+				27BAC901192969CB00BF04C4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27BAC8EE192969CB00BF04C4 /* AutoBluetooth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BAC920192969CB00BF04C4 /* Build configuration list for PBXNativeTarget "AutoBluetooth" */;
+			buildPhases = (
+				27BAC8EB192969CB00BF04C4 /* Sources */,
+				27BAC8EC192969CB00BF04C4 /* Frameworks */,
+				27BAC8ED192969CB00BF04C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoBluetooth;
+			productName = AutoBluetooth;
+			productReference = 27BAC8EF192969CB00BF04C4 /* AutoBluetooth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27BAC8E7192969CB00BF04C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Kyle Sluder";
+			};
+			buildConfigurationList = 27BAC8EA192969CB00BF04C4 /* Build configuration list for PBXProject "AutoBluetooth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27BAC8E6192969CB00BF04C4;
+			productRefGroup = 27BAC8F0192969CB00BF04C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27BAC8EE192969CB00BF04C4 /* AutoBluetooth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27BAC8ED192969CB00BF04C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BAC8FD192969CB00BF04C4 /* InfoPlist.strings in Resources */,
+				27BAC90B192969CB00BF04C4 /* Images.xcassets in Resources */,
+				27BAC903192969CB00BF04C4 /* Credits.rtf in Resources */,
+				27BAC909192969CB00BF04C4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27BAC8EB192969CB00BF04C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BAC906192969CB00BF04C4 /* AppDelegate.m in Sources */,
+				27BAC8FF192969CB00BF04C4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27BAC8FB192969CB00BF04C4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BAC8FC192969CB00BF04C4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		27BAC901192969CB00BF04C4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BAC902192969CB00BF04C4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		27BAC907192969CB00BF04C4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BAC908192969CB00BF04C4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27BAC91E192969CB00BF04C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27BAC91F192969CB00BF04C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		27BAC921192969CB00BF04C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoBluetooth/AutoBluetooth-Prefix.pch";
+				INFOPLIST_FILE = "AutoBluetooth/AutoBluetooth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		27BAC922192969CB00BF04C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoBluetooth/AutoBluetooth-Prefix.pch";
+				INFOPLIST_FILE = "AutoBluetooth/AutoBluetooth-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27BAC8EA192969CB00BF04C4 /* Build configuration list for PBXProject "AutoBluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BAC91E192969CB00BF04C4 /* Debug */,
+				27BAC91F192969CB00BF04C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BAC920192969CB00BF04C4 /* Build configuration list for PBXNativeTarget "AutoBluetooth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BAC921192969CB00BF04C4 /* Debug */,
+				27BAC922192969CB00BF04C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27BAC8E7192969CB00BF04C4 /* Project object */;
+}
