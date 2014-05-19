@@ -12,6 +12,7 @@
 		27BAC8FF192969CB00BF04C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC8FE192969CB00BF04C4 /* main.m */; };
 		27BAC903192969CB00BF04C4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC901192969CB00BF04C4 /* Credits.rtf */; };
 		27BAC906192969CB00BF04C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC905192969CB00BF04C4 /* AppDelegate.m */; };
+		27BAC909192969CB00BF04C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC907192969CB00BF04C4 /* MainMenu.xib */; };
 		27BAC90B192969CB00BF04C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC90A192969CB00BF04C4 /* Images.xcassets */; };
 		27BAC930192A610A00BF04C4 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BAC92F192A610A00BF04C4 /* IOBluetooth.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		27BAC902192969CB00BF04C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		27BAC904192969CB00BF04C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27BAC905192969CB00BF04C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27BAC908192969CB00BF04C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		27BAC90A192969CB00BF04C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27BAC911192969CB00BF04C4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		27BAC92F192A610A00BF04C4 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 			children = (
 				27BAC904192969CB00BF04C4 /* AppDelegate.h */,
 				27BAC905192969CB00BF04C4 /* AppDelegate.m */,
+				27BAC907192969CB00BF04C4 /* MainMenu.xib */,
 				27BAC90A192969CB00BF04C4 /* Images.xcassets */,
 				27BAC8F9192969CB00BF04C4 /* Supporting Files */,
 			);
@@ -163,6 +166,7 @@
 				27BAC8FD192969CB00BF04C4 /* InfoPlist.strings in Resources */,
 				27BAC90B192969CB00BF04C4 /* Images.xcassets in Resources */,
 				27BAC903192969CB00BF04C4 /* Credits.rtf in Resources */,
+				27BAC909192969CB00BF04C4 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +199,14 @@
 				27BAC902192969CB00BF04C4 /* en */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		27BAC907192969CB00BF04C4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BAC908192969CB00BF04C4 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
