@@ -14,6 +14,7 @@
 		27BAC906192969CB00BF04C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC905192969CB00BF04C4 /* AppDelegate.m */; };
 		27BAC909192969CB00BF04C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC907192969CB00BF04C4 /* MainMenu.xib */; };
 		27BAC90B192969CB00BF04C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BAC90A192969CB00BF04C4 /* Images.xcassets */; };
+		27BAC930192A610A00BF04C4 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BAC92F192A610A00BF04C4 /* IOBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		27BAC908192969CB00BF04C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		27BAC90A192969CB00BF04C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27BAC911192969CB00BF04C4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		27BAC92F192A610A00BF04C4 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BAC930192A610A00BF04C4 /* IOBluetooth.framework in Frameworks */,
 				27BAC8F3192969CB00BF04C4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		27BAC8F1192969CB00BF04C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27BAC92F192A610A00BF04C4 /* IOBluetooth.framework */,
 				27BAC8F2192969CB00BF04C4 /* Cocoa.framework */,
 				27BAC911192969CB00BF04C4 /* XCTest.framework */,
 				27BAC8F4192969CB00BF04C4 /* Other Frameworks */,
@@ -323,6 +327,7 @@
 				27BAC922192969CB00BF04C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,6 +13,11 @@
 
 @implementation AppDelegate
 
+#pragma mark - Private Bluetooth API
+
+extern BOOL IOBluetoothPreferenceGetControllerPowerState();
+extern void IOBluetoothPreferenceSetControllerPowerState(BOOL enableBluetooth);
+
 #pragma mark - Display configuration
 
 static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSummaryFlags flags, void *userInfo)
@@ -34,7 +39,12 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
             externalDisplayCount++;
     }
     
-    [self _displayBluetoothBalloon:externalDisplayCount > 0];
+    BOOL turnOn = externalDisplayCount > 0;
+    BOOL wasOn = IOBluetoothPreferenceGetControllerPowerState();
+    if (turnOn != wasOn) {
+        IOBluetoothPreferenceSetControllerPowerState(turnOn);
+        [self _displayBluetoothBalloon:turnOn];
+    }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
