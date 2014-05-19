@@ -56,6 +56,7 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
 - (void)applicationWillTerminate:(NSNotification *)notification;
 {
     CGDisplayRemoveReconfigurationCallback(_displaysReconfigured, NULL);
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:nil];
 }
 
 #pragma mark - Notification balloons
