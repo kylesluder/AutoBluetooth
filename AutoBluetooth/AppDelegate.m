@@ -54,7 +54,7 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
     // Register the callback _first_, so that events get enqueued for any display configuration changes that happen while we're processing the initial display configuration.
     CGError registrationError = CGDisplayRegisterReconfigurationCallback(_displaysReconfigured, NULL);
     if (registrationError != kCGErrorSuccess) {
-        NSAlert *failureAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"Could not register display configuration callback.", @"error message") defaultButton:NSLocalizedString(@"Quit", @"error button") alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Received error %ld. %@ will now quit.", @"error informative text"), registrationError, NSApp];
+        NSAlert *failureAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"Could not register display configuration callback.", @"error message") defaultButton:NSLocalizedString(@"Quit", @"error button") alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Received error %ld. %@ will now quit.", @"error informative text"), registrationError, [[NSRunningApplication currentApplication] localizedName]];
         [failureAlert runModal];
         [NSApp terminate:nil];
     }
