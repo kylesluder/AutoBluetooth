@@ -10,8 +10,6 @@
 
 @implementation AppDelegate
 
-//static const NSTimeInterval NotificationDuration = 5.0f;
-
 static uint32_t externalDisplayCount = 0;
 
 static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSummaryFlags flags, void *userInfo)
@@ -36,9 +34,14 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
     [self _displayBluetoothBalloon:externalDisplayCount > 0];
 }
 
+static NSString *const NotificationCookie = @"hello, world!";
+static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.BluetoothBalloonCookie";
+
 - (void)_displayBluetoothBalloon:(BOOL)bluetoothEnabled;
 {
     NSUserNotification *notification = [NSUserNotification new];
+    notification.userInfo = @{NotificationCookieKey : NotificationCookie};
+    
     if (bluetoothEnabled) {
         notification.title = NSLocalizedString(@"Bluetooth enabled", @"notification title");
         notification.informativeText = NSLocalizedString(@"Bluetooth has been enabled because this computer was connected to an external display.", @"notification informative text");
@@ -48,6 +51,11 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
     }
     
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
+    for (NSUserNotification *existingNotification in center.deliveredNotifications) {
+        if ([existingNotification.userInfo objectForKey:NotificationCookieKey] != nil)
+            [center removeDeliveredNotification:existingNotification];
+    }
+    
     [center deliverNotification:notification];
 }
 
