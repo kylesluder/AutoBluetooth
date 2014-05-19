@@ -10,15 +10,17 @@
 
 @implementation AppDelegate
 
+#pragma mark - Display configuration
+
 static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSummaryFlags flags, void *userInfo)
 {
-    [[NSRunLoop currentRunLoop] cancelPerformSelector:@selector(_toggleBluetooth:) target:[NSApp delegate] argument:nil];
-    [[NSApp delegate] performSelector:@selector(_toggleBluetooth:) withObject:nil afterDelay:0];
+    [[NSRunLoop currentRunLoop] cancelPerformSelector:@selector(_handleDisplaysReconfigured:) target:[NSApp delegate] argument:nil];
+    [[NSApp delegate] performSelector:@selector(_handleDisplaysReconfigured:) withObject:nil afterDelay:0];
 }
 
-- (void)_toggleBluetooth:(id)sender;
+- (void)_handleDisplaysReconfigured:(id)unused;
 {
-    uint32_t externalDisplayCount;
+    uint32_t externalDisplayCount = 0;
     
     static const uint32_t MaxDisplayCount = 256;
     CGDirectDisplayID onlineDisplayIDs[MaxDisplayCount];
@@ -31,6 +33,27 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
     
     [self _displayBluetoothBalloon:externalDisplayCount > 0];
 }
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    // Register the callback _first_, so that events get enqueued for any display configuration changes that happen while we're processing the initial display configuration.
+    CGError registrationError = CGDisplayRegisterReconfigurationCallback(_displaysReconfigured, NULL);
+    if (registrationError != kCGErrorSuccess) {
+        NSAlert *failureAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"Could not register display configuration callback.", @"error message") defaultButton:NSLocalizedString(@"Quit", @"error button") alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Received error %ld. %@ will now quit.", @"error informative text"), registrationError, NSApp];
+        [failureAlert runModal];
+        [NSApp terminate:nil];
+    }
+    
+    // Turn Bluetooth on or off based on the initial display configuration. Delay-performed so it gets coalesced with any incoming notifications that happen while we finish launching. (Let's not turn radios on and off unnecessarily.)
+    [self performSelector:@selector(_handleDisplaysReconfigured:) withObject:nil afterDelay:0];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification;
+{
+    CGDisplayRemoveReconfigurationCallback(_displaysReconfigured, NULL);
+}
+
+#pragma mark - Notification balloons
 
 static NSString *const NotificationCookie = @"hello, world!";
 static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.BluetoothBalloonCookie";
@@ -55,25 +78,6 @@ static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.Bluet
     }
     
     [center deliverNotification:notification];
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Register the callback _first_, so that events get enqueued for any display configuration changes that happen while we're processing the initial display configuration.
-    CGError registrationError = CGDisplayRegisterReconfigurationCallback(_displaysReconfigured, NULL);
-    if (registrationError != kCGErrorSuccess) {
-        NSAlert *failureAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"Could not register display configuration callback.", @"error message") defaultButton:NSLocalizedString(@"Quit", @"error button") alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Received error %ld. %@ will now quit.", @"error informative text"), registrationError, NSApp];
-        [failureAlert runModal];
-        [NSApp terminate:nil];
-    }
-    
-    // Turn Bluetooth on or off based on the initial display configuration.
-    [self performSelector:@selector(_toggleBluetooth:) withObject:nil afterDelay:0];
-}
-
-- (void)applicationWillTerminate:(NSNotification *)notification;
-{
-    CGDisplayRemoveReconfigurationCallback(_displaysReconfigured, NULL);
 }
 
 @end
