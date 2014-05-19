@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate () <NSUserNotificationCenterDelegate>
+@end
+
 @implementation AppDelegate
 
 #pragma mark - Display configuration
@@ -36,6 +39,8 @@ static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSumm
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    
     // Register the callback _first_, so that events get enqueued for any display configuration changes that happen while we're processing the initial display configuration.
     CGError registrationError = CGDisplayRegisterReconfigurationCallback(_displaysReconfigured, NULL);
     if (registrationError != kCGErrorSuccess) {
@@ -78,6 +83,13 @@ static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.Bluet
     }
     
     [center deliverNotification:notification];
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification;
+{
+    NSAssert([[notification.userInfo objectForKey:NotificationCookieKey] isEqual:NotificationCookie], @"Asked about a notification we didn't enqueue!");
+    
+    return YES;
 }
 
 @end
