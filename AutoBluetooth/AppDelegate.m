@@ -10,27 +10,25 @@
 
 @implementation AppDelegate
 
-static uint32_t externalDisplayCount = 0;
-
 static void _displaysReconfigured(CGDirectDisplayID display, CGDisplayChangeSummaryFlags flags, void *userInfo)
 {
-    if (flags & kCGDisplayBeginConfigurationFlag)
-        return; // only toggle Bluetooth on "did-change"
-    
-    if (CGDisplayIsBuiltin(display))
-        return; // don't care about built-in displays
-    
-    if (flags & kCGDisplayAddFlag)
-        externalDisplayCount++;
-    else if (flags * kCGDisplayRemoveFlag)
-        externalDisplayCount--;
-    
     [[NSRunLoop currentRunLoop] cancelPerformSelector:@selector(_toggleBluetooth:) target:[NSApp delegate] argument:nil];
     [[NSApp delegate] performSelector:@selector(_toggleBluetooth:) withObject:nil afterDelay:0];
 }
 
 - (void)_toggleBluetooth:(id)sender;
 {
+    uint32_t externalDisplayCount;
+    
+    static const uint32_t MaxDisplayCount = 256;
+    CGDirectDisplayID onlineDisplayIDs[MaxDisplayCount];
+    uint32_t onlineDisplayIDCount;
+    CGGetOnlineDisplayList(MaxDisplayCount, onlineDisplayIDs, &onlineDisplayIDCount);
+    for (uint32_t i = 0; i < onlineDisplayIDCount; i++) {
+        if (!CGDisplayIsBuiltin(onlineDisplayIDs[i]))
+            externalDisplayCount++;
+    }
+    
     [self _displayBluetoothBalloon:externalDisplayCount > 0];
 }
 
@@ -70,15 +68,6 @@ static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.Bluet
     }
     
     // Turn Bluetooth on or off based on the initial display configuration.
-    static const uint32_t MaxDisplayCount = 256;
-    CGDirectDisplayID onlineDisplayIDs[MaxDisplayCount];
-    uint32_t onlineDisplayIDCount;
-    CGGetOnlineDisplayList(MaxDisplayCount, onlineDisplayIDs, &onlineDisplayIDCount);
-    for (uint32_t i = 0; i < onlineDisplayIDCount; i++) {
-        if (!CGDisplayIsBuiltin(onlineDisplayIDs[i]))
-            externalDisplayCount++;
-    }
-    
     [self performSelector:@selector(_toggleBluetooth:) withObject:nil afterDelay:0];
 }
 
