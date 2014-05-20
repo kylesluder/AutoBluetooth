@@ -80,11 +80,11 @@ static NSString *const NotificationCookieKey = @"com.ksluder.AutoBluetooth.Bluet
     notification.userInfo = @{NotificationCookieKey : NotificationCookie};
     
     if (bluetoothEnabled) {
-        notification.title = NSLocalizedString(@"Bluetooth enabled", @"notification title");
-        notification.informativeText = NSLocalizedString(@"Bluetooth has been enabled because this computer was connected to an external display.", @"notification informative text");
+        notification.title = NSLocalizedString(@"Bluetooth Turned On", @"notification title");
+        notification.informativeText = NSLocalizedString(@"This computer was connected to an external display.", @"notification informative text");
     } else {
-        notification.title = NSLocalizedString(@"Bluetooth disabled", @"notification title");
-        notification.informativeText = NSLocalizedString(@"Bluetooth has been disabled because this computer was disconnected from all external displays.", @"notification informative text");
+        notification.title = NSLocalizedString(@"Bluetooth Turned Off", @"notification title");
+        notification.informativeText = NSLocalizedString(@"This computer was disconnected from all external displays.", @"notification informative text");;
     }
     
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
